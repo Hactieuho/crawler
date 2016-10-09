@@ -20,13 +20,22 @@ public class Crawler extends JFrame{
 	 */
 	public Crawler(){
 		//Set Title is "First application".
-		setTitle("First application");
+		setTitle("Tỷ giá ngoại tệ ngân hàng Vietcombank");
 		
 		//Set Size is 300x300 px.
-		setSize(300, 300);
+		setSize(800, 600);
 		
-		//Handle the closing event.
+		/*
+		   Add a Window Listener.
+		   class WindowAdapter overrides class WindowClosing.
+		 */
 		addWindowListener(new WindowAdapter() {
+			
+		/**
+		 * <h1>Call the exit event</h1>
+		 * @param e unused
+		 */
+			@SuppressWarnings("unused")
 			public void exit(WindowEvent e){
 				ExitApp();
 			}
@@ -40,23 +49,42 @@ public class Crawler extends JFrame{
 		System.exit(0);
 	}
 	
-	/**
-	 * <h1>Setup file menu<h1>
-	 */
+	//Setup file menu
 	{
+		//Add a MenuBar has name is "menubar".
 		JMenuBar menubar = new JMenuBar();
+		
+		//Add a Menu has name is "File"
 		JMenu menu = new JMenu("File");
+		
+		//Add a MenuItem has name is "Exit".
+		JMenuItem menuitem = new JMenuItem("Exit");
+		
+		//Add File's hot key is [Alt + F].
 		menu.setMnemonic(KeyEvent.VK_F);
-		JMenuItem menuitem = new JMenuItem("Exit", KeyEvent.VK_X);
+		
+		//Add Exit's hot key is [Alt + X].
+		menuitem.setMnemonic(KeyEvent.VK_X);
+		
+		//Add a exit event.
 		menuitem.addActionListener(new ActionListener(){
+			
+			//Override the Exit event
 			public void actionPerformed(ActionEvent e){
 				ExitApp();
 			}
 		});
+		
+		//Add menu item "Exit" into menu "File".
 		menu.add(menuitem);
+		
+		//Add menu "File" into menu bar.
 		menubar.add(menu);
+		
+		//Add menu bar into app.
 		setJMenuBar(menubar);
 	}
+	
 	
 	/**
 	 * <h1>Main method</h1>
