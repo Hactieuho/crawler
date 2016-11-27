@@ -17,10 +17,13 @@ import org.jsoup.select.Elements;
 public class FinalProgram1Ngay {
 	static String day = "22/11/2015";
 	public static String post() throws IOException{
+		
 		//URL cua website can lay ma nguon
 		String url = "http://vietcombank.com.vn/ExchangeRates/default.aspx";
+		
 		//Tao 1 doi tuong URL va ket noi den website can lay ma nguon
 		URL obj = new URL(url);
+		
 		//Tao 1 doi tuong HttpURLConnection mo ket noi den website
 		HttpURLConnection con = (HttpURLConnection) obj.openConnection();
 
